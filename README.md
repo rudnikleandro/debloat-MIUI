@@ -12,7 +12,7 @@ In Developer Mode settings, enable the following options:
 "USB Debugging (Security Config.)"
 "USB apps"
 
-## Computer Configuration (RHEL-based systems)
+## Computer Configuration & Execution (RHEL-based systems)
 1. Install adb
 Open a terminal and run:
 
@@ -35,6 +35,18 @@ To access your phone's shell, run:
 
 ```sudo adb shell```
 
+5. Download the script .sh in this repository
+
+6. Make the script executable:
+Run the following command to make the script executable:
+
+```chmod +x uninstall_app.sh```
+
+7. Run the script
+Execute the script by running:
+
+```./uninstall_app.sh``` 
+
 ## Computer Configuration (Ubuntu-based systems)
 1. Install adb
 Run the following command to install adb on Ubuntu:
@@ -53,4 +65,18 @@ Connect your phone and check the connection by running:
 ```adb devices```
 ```sudo adb shell```
 
+4. Download the script .sh in this repository
 
+5. Make the script executable:
+Run the following command to make the script executable:
+
+```chmod +x uninstall_app.sh```
+
+6. Run the script
+Execute the script by running:
+
+```./uninstall_app.sh``` 
+
+⚠️ Disclaimer
+Use this script at your own risk.
+The creator of this script is not responsible for any damage that may occur to your device, including but not limited to: bricking, malfunctions, loss of data, or any other defects caused by the use of this script. Please ensure you have a complete backup of your device before proceeding, and only use this script if you fully understand the risks involved.
