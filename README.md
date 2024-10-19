@@ -12,6 +12,12 @@ In Developer Mode settings, enable the following options:
 "USB Debugging (Security Config.)"
 "USB apps"
 
+Examples of Xiaomi devices that may be compatible:
+
+Xiaomi Mi series: Mi 10, Mi 11, Mi 11 Ultra, Mi 12, etc.
+Xiaomi Redmi series: Redmi Note 8, Redmi Note 9, Redmi Note 10, Redmi 9, etc.
+Xiaomi Poco series: Poco F1, Poco X3, Poco F3, etc.
+
 ## Computer Configuration & Execution (RHEL-based systems)
 1. Install adb
 Open a terminal and run:
