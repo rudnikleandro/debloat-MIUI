@@ -1,14 +1,3 @@
-# Phone:
-# 1 - Enable Developer Mode
-# 2 - In Developer Mode, enable "USB Debbuging, "USB Debugging (Security Config.)" and "USB apps"
-
-# Computer (RHEL):
-# 1 - sudo dnf install adb
-# 2 - sudo dnf update
-# 3 - sudo dnf upgrade
-# 4 - adb devices
-# 5 - sudo adb shell
-
 uninstall_apps() {
     adb devices >/dev/null 2>&1
     if [ $? -ne 0 ]; then
