@@ -1,6 +1,11 @@
 uninstall_apps() {
+    if ! command -v adb &> /dev/null; then
+        echo "ADB is not installed. Please install ADB and try again."
+        exit 1
+    fi
+
     if ! adb devices | grep -q 'device$'; then
-        echo "Connect your cellphone on your computer"
+        echo "Connect your cellphone to your computer"
         exit 1
     fi
 
@@ -56,12 +61,23 @@ uninstall_apps() {
         "com.miui.face"
     )
 
+    read -p "Are you sure you want to uninstall ${#apps[@]} apps? (y/n): " -n 1 -r
+    echo    
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "Aborting uninstallation."
+        exit 1
+    fi
+
     for app in "${apps[@]}"; do
         echo "Uninstalling $app..."
-        adb shell pm uninstall -k --user 0 "$app" && echo "Done" || echo "Failed to uninstall $app"
+        if adb shell pm uninstall -k --user 0 "$app"; then
+            echo "Done"
+        else
+            echo "Failed to uninstall $app"
+        fi
     done
 
-    echo "Apps uninstalled"
+    echo "Apps uninstalled."
 }
 
 uninstall_apps
